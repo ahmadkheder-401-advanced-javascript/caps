@@ -22,10 +22,10 @@ function fakeOrderGenerator() {
 
 let i = 10;
 let triggerOrders = () => {
-    let fakerOrder ;
+    let fakeOrder ;
     while (i) {
-         fakerOrder = setTimeout(fakeOrderGenerator, 5000);
-        events.emit('pickup', fakerOrder);
+        fakeOrder = setTimeout(fakeOrderGenerator, 5000);
+        events.emit('pickup', fakeOrder);
         i--;
     }
     return fakeOrder;

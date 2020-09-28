@@ -1,5 +1,8 @@
 # caps# caps
 
+-[x] Pickup log
+-[x] In-transit log
+-[x] Delivered log
 
 ## Installation
 
@@ -21,5 +24,3 @@ This application was build with Node.js and it includes:
 # UML diagram
 ![image](asset/init_caps_uml.jpg)
 
-
-#

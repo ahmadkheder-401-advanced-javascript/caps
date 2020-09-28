@@ -3,7 +3,7 @@ const events = require('./event');
 const vendors = require('./vendor');
 
 
-events.on('pickup', pickedupHandler(vendors));
+events.emit('pickup', pickedupHandler(vendors));
 
 function pickedupHandler(vendors) {
     setTimeout(() => {
