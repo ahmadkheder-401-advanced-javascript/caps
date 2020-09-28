@@ -9,33 +9,33 @@ require('./driver');
 let store_name = process.env.STORE_NAME;
 
 function fakeOrderGenerator() {
-    // setTimeout(()=>{}, 5000)
-    let fakeOrder = {
-        storeName: faker.company.companyName(),
-        orderId: faker.random.number(),
-        customerName: `${faker.name.firstName()} ${faker.name.lastName()}`,
-        address: `${faker.address.city()}-${faker.address.country()}`
-    };
-    return fakeOrder;
+  // setTimeout(()=>{}, 5000)
+  let fakeOrder = {
+    storeName: faker.company.companyName(),
+    orderId: faker.random.number(),
+    customerName: `${faker.name.firstName()} ${faker.name.lastName()}`,
+    address: `${faker.address.city()}-${faker.address.country()}`
+  };
+  return fakeOrder;
 
 }
 
 let i = 10;
 let triggerOrders = () => {
-    let fakeOrder ;
-    while (i) {
-        fakeOrder = setTimeout(fakeOrderGenerator, 5000);
-        events.emit('pickup', fakeOrder);
-        i--;
-    }
-    return fakeOrder;
+  let fakeOrder ;
+  while (i) {
+    fakeOrder = setTimeout(fakeOrderGenerator, 5000);
+    events.emit('pickup', fakeOrder);
+    i--;
+  }
+  return fakeOrder;
 
 };
 triggerOrders();
 
 events.emit('delivered', deliveredHandling);
 function deliveredHandling() {
-    console.log('thank you');
+  console.log('thank you');
 }
 module.exports = triggerOrders;
 /*

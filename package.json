@@ -1,10 +1,12 @@
 {
   "name": "caps",
   "version": "1.0.0",
-  "description": "",
+  "description": "**Test** - [x] Pickup log - [x] In-transit log - [x] Delivered log",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage",
+    "lint": "eslint '**/*.js'",
+    "fix": "eslint '**/*.js' --fix"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 'use strict';
 
-// caps test 
+// caps test
 
 const events = require('../modular/event');
 require('../caps');

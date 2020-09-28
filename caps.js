@@ -11,7 +11,7 @@ function log(event, payload) {
   console.log('EVENT LOG', { time, event, payload });
 }
 
-/* 
+/*
 
 caps.js - Main Hub Application
 

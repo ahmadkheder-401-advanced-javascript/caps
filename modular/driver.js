@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 const events = require('./event');
 const vendors = require('./vendor');
 
@@ -6,19 +6,19 @@ const vendors = require('./vendor');
 events.emit('pickup', pickedupHandler(vendors));
 
 function pickedupHandler(vendors) {
-    setTimeout(() => {
-    console.log(`DRIVER: picked up ${vendors.fakeOrder.orderId}`)
+  setTimeout(() => {
+    console.log(`DRIVER: picked up ${vendors.fakeOrder.orderId}`);
     events.emit('in-transit', vendors.fakeOrder);
     setTimeout(() => {
-        console.log('delivered');
-        events.emit('delivered', payload);
-    }, 3000)
-}, 1000);
+      console.log('delivered');
+      events.emit('delivered', payload);
+    }, 3000);
+  }, 1000);
 }
 
 
 
-/* 
+/*
 
 driver.js - Drivers Module
 
