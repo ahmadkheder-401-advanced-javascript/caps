@@ -10,8 +10,7 @@
 
 2. Clone the repo
 
-`https://github.com/abdallahsafi-401-advanced-javascript/caps.git`
-
+`https://github.com/ahmadkheder-401-advanced-javascript/caps/tree/events`
 ## Usage
 
 
