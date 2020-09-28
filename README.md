@@ -1,8 +1,8 @@
 # caps# caps
 
--[x] Pickup log
--[x] In-transit log
--[x] Delivered log
+- [x] Pickup log
+- [x] In-transit log
+- [x] Delivered log
 
 ## Installation
 
