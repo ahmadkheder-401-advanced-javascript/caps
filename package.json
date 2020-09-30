@@ -1,0 +1,31 @@
+{
+  "name": "caps",
+  "version": "1.0.0",
+  "description": "**Test** - [x] Pickup log - [x] In-transit log - [x] Delivered log",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "lint": "eslint '**/*.js'",
+    "fix": "eslint '**/*.js' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadkheder-401-advanced-javascript/caps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmadkheder-401-advanced-javascript/caps/issues"
+  },
+  "homepage": "https://github.com/ahmadkheder-401-advanced-javascript/caps#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^7.10.0",
+    "faker": "^5.1.0",
+    "jest": "^26.4.2"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
+}
