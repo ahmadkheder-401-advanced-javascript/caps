@@ -6,10 +6,9 @@ require('dotenv').config();
 
 require('../caps');
 require('./driver');
-let store_name = process.env.STORE_NAME;
+// let store_name = process.env.STORE_NAME;
 
 function fakeOrderGenerator() {
-  // setTimeout(()=>{}, 5000)
   let fakeOrder = {
     storeName: faker.company.companyName(),
     orderId: faker.random.number(),

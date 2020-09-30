@@ -1,17 +1,18 @@
 'use strict';
-const events = require('./event');
-const vendors = require('./vendor');
+const Events = require('./event');
+const Vendors = require('./vendor');
 
 
-events.emit('pickup', pickedupHandler(vendors));
+Events.emit('pickup', pickedupHandler(Vendors));
 
 function pickedupHandler(vendors) {
   setTimeout(() => {
     console.log(`DRIVER: picked up ${vendors.fakeOrder.orderId}`);
-    events.emit('in-transit', vendors.fakeOrder);
+    Events.emit('in-transit', vendors.fakeOrder);
     setTimeout(() => {
       console.log('delivered');
-      events.emit('delivered', payload);
+      // eslint-disable-next-line no-undef
+      Events.emit('delivered', payload);
     }, 3000);
   }, 1000);
 }

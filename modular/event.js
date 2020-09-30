@@ -1,8 +1,8 @@
 'use strict';
 
-const events = require('events');
+const Events = require('events');
 
-const newEvents = new events();
+const newEvents = new Events();
 
 // events.on('pickup',payload => console.log(payload));
 // events.on('delivered',payload => console.log(payload));

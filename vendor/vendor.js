@@ -1,42 +1,28 @@
 'use strict';
+var Faker = require('faker');
+const io = require('socket.io-client');
+const socket = io.connect('http://localhost:4000/caps');
 
-
-var faker = require('faker');
-
-const net = require('net');
-const host =  process.env.HOST || 'localhost';
-const port = process.env.PORT || 4000;
-const client = new net.Socket();
-
-client.connect(port, host, ()=> {
-  console.log('Vendore is connected to Server! ..');
-});
-
-client.on('data', function(data) {
-  let msg = JSON.parse(data);
-  if(msg.event === 'delivered'){
-    console.log(`thank you for delivering ${msg.payload.orderId}`);
+socket.on('connect', () => {
+  socket.emit('join', 'vendor');
+  let i = 10;
+  while (i) {
+    setTimeout(() => {
+      let order = {
+        storeName: Faker.company.companyName(),
+        orderId: Faker.random.number(),
+        customerName: `${Faker.name.firstName()} ${Faker.name.lastName()}`,
+        address: `${Faker.address.city()}-${Faker.address.country()}`
+      };
+      sendMessageToServer('pickup', order);
+    }, i * 1000);
+    i--;
   }
+  socket.on('delivered', (payload) => {
+    console.log(`thank you for delivering ${payload.orderId}`);
+  });
 });
-
-
-let i = 5;
-while (i) {
-  setTimeout(() => {
-    let order = {
-      storeName: faker.company.companyName(),
-      orderId: faker.random.number(),
-      customerName: `${faker.name.firstName()} ${faker.name.lastName()}`,
-      address: `${faker.address.city()}-${faker.address.country()}`
-    };
-    sendMessageToServer('pickup', order);
-  }, i * 1000);
-  i--;
-}
-
-
 function sendMessageToServer(event, payload) {
-  const msg = JSON.stringify({event: event, payload: payload});
-  client.write(msg);
+  socket.emit(event, payload);
 }
 
